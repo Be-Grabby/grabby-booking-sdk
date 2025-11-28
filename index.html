@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grabby SDK Demo</title>
+  <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      #booking-container {
+        width: 100%;
+        height: 600px;
+        margin-top: 2rem;
+      }
+  </style>
+</head>
+<body>
+  <h1>Grabby SDK Demo</h1>
+  <button id="modal-btn">Show Modal</button>
+  <button id="product-btn">PreSelect Product</button>
+
+  <div id="booking-container"></div>
+
+  <!-- Import the source directly for Vite dev -->
+  <script type="module">
+    import GrabbySDK from './src/index.ts';
+    // Also expose to window for console testing if needed, though module scope is isolated
+    window.Grabby = GrabbySDK;
+
+    const bannerUrl = `/assets/integration-example/banner-online.png`;
+    const logoUrl = `/assets/integration-example/logo-another-wakepark.png`;
+
+    const grabby = new GrabbySDK('jawp', {
+      lang: 'en',
+      url: 'https://demo.begrabby.com',
+      colorPrimary: 'fe6913',
+      colorAccent: '1E1F21',
+      color: '4c4c4c',
+      bannerUrl,
+      logoUrl
+    });
+
+    grabby.render('#booking-container');
+
+    document.getElementById('modal-btn').addEventListener('click', () => {
+      console.log('Showing modal...');
+
+      grabby.showModal();
+    });
+
+    document.getElementById('product-btn').addEventListener('click', () => {
+      console.log('PreSelecting Product...');
+      grabby.showModal({
+        productId: 'fdfbd428-7d39-4819-969f-01823d01958d',
+        compact: true,
+        isIframe: true,
+      });
+    });
+  </script>
+</body>
+</html>
