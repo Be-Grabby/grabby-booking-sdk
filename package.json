@@ -1,14 +1,22 @@
 {
   "name": "@begrabby/booking-sdk",
-  "version": "1.0.0",
+  "version": "1.0.",
   "description": "Grabby Booking SDK",
   "main": "dist/grabby-sdk.umd.js",
   "module": "dist/grabby-sdk.es.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/Be-Grabby/grabby-booking-sdk.git"
+  },
+  "homepage": "https://github.com/Be-Grabby/grabby-booking-sdk",
+  "bugs": "https://github.com/Be-Grabby/grabby-booking-sdk/issues",
+  "private": false,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "push": "npm run build && npm publish"
   },
   "keywords": [],
   "author": "",

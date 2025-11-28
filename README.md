@@ -4,7 +4,7 @@ The Grabby Booking SDK allows you to easily integrate the Grabby booking interfa
 
 ## Installation
 
-### CDN (Recommended)
+### CDN
 
 Add the following script tag to your HTML:
 
