@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grabby SDK Demo</title>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/Be-Grabby/grabby-booking-sdk/dist/grabby-sdk.umd.js"></script>
   <style>
       body {
         font-family: sans-serif;
@@ -25,14 +26,10 @@
 
   <!-- Import the source directly for Vite dev -->
   <script type="module">
-    import GrabbySDK from './src/index.ts';
-    // Also expose to window for console testing if needed, though module scope is isolated
-    window.Grabby = GrabbySDK;
-
     const bannerUrl = `/assets/integration-example/banner-online.png`;
     const logoUrl = `/assets/integration-example/logo-another-wakepark.png`;
 
-    const grabby = new GrabbySDK('jawp', {
+    const grabby = new window.Grabby('jawp', {
       lang: 'en',
       url: 'https://demo.begrabby.com',
       colorPrimary: 'fe6913',

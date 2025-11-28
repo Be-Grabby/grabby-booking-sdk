@@ -1,5 +1,5 @@
 {
-  "name": "grabby-booking-sdk",
+  "name": "@begrabby/booking-sdk",
   "version": "1.0.0",
   "description": "Grabby Booking SDK",
   "main": "dist/grabby-sdk.umd.js",
@@ -15,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.0.0",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
