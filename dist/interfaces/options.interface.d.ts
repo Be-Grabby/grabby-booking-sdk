@@ -5,6 +5,7 @@ export interface GrabbyOptions {
     lang?: string;
     returnUrl?: string;
     isIframe?: boolean;
+    hideFooter?: boolean;
     isGiftCardOpen?: boolean;
     colorPrimary?: string;
     colorAccent?: string;
@@ -16,5 +17,6 @@ export interface GrabbyOptions {
 export interface GrabbyOpenOptions {
     productId?: string;
     eventId?: string;
+    visitDate?: string;
     preselectGiftCardAmount?: number;
 }

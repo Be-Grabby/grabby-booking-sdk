@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script type="module" src="https://cdn.jsdelivr.net/gh/Be-Grabby/grabby-booking-sdk/dist/grabby-sdk.umd.js"></script>
+<style>
+  #booking-container {
+    width: 100%;
+    min-height: 1000px;
+  }
+  #booking-container iframe {
+    min-height: 1000px;
+  }
+</style>
+
+<div id="booking-container"></div>
+
+<script type="module">
+  const bannerUrl = "https://grabby.s3.eu-west-3.amazonaws.com/booking-images/hwc/hwc-banner.jpg";
+  const logoUrl = "https://grabby.s3.eu-west-3.amazonaws.com/booking-images/hwc/hwc-logo.png";
+
+  const grabby = new window.Grabby('hwc', {
+    lang: 'es',
+    colorPrimary: '000000',
+    colorAccent: '000000',
+    color: '000000',
+    bannerUrl,
+    logoUrl,
+    compact: true,
+    hideFooter: true,
+  });
+
+  grabby.render('#booking-container');
+</script>
+</body>
+</html>

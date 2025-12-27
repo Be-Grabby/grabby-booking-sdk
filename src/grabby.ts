@@ -20,6 +20,8 @@ export class GrabbySDK {
 
     // Add query params
     if (openOptions?.compact || this.options?.compact) url.searchParams.append('compact', 'true');
+    if (openOptions?.hideFooter || this.options?.hideFooter) url.searchParams.append('hideFooter', 'true');
+
     const lang = openOptions?.lang || this.options?.lang;
     if (lang) url.searchParams.append('lang', lang);
 
@@ -28,6 +30,7 @@ export class GrabbySDK {
     if (openOptions?.isIframe !== undefined || this.options?.isIframe !== undefined) url.searchParams.append('isIframe', String(openOptions?.isIframe || this.options?.isIframe));
 
     if (openOptions?.productId) url.searchParams.append('productId', openOptions.productId);
+    if (openOptions?.visitDate) url.searchParams.append('visitDate', openOptions.visitDate);
     if (openOptions?.eventId) url.searchParams.append('eventId', openOptions.eventId);
     if (openOptions?.isGiftCardOpen) url.searchParams.append('isGiftCardOpen', 'true');
     if (openOptions?.preselectGiftCardAmount) url.searchParams.append('preselectGiftCardAmount', String(openOptions.preselectGiftCardAmount));

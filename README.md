@@ -66,6 +66,7 @@ new Grabby(accountId, options)
 | `compact` | boolean | Enable compact mode for smaller displays |
 | `returnUrl` | string | URL to redirect after booking completion |
 | `isIframe` | boolean | Enable iframe mode |
+| `hideFooter` | boolean | Hide the footer in the booking interface |
 | `isGiftCardOpen` | boolean | Open gift card section by default |
 | `colorPrimary` | string | Primary color (hex without `#`, e.g., `'fe6913'`) |
 | `colorAccent` | string | Accent color (hex without `#`) |
@@ -122,6 +123,7 @@ When calling `render()` or `showModal()`, you can pass additional options:
 |--------|------|-------------|
 | `productId` | string | Pre-select a specific product |
 | `eventId` | string | Pre-select a specific event |
+| `visitDate` | string | Pre-select a visit date (in the format DD-MM-YYYY, e.g., `'31-12-2024'`) |
 | `preselectGiftCardAmount` | number | Pre-select gift card amount |
 
 All constructor options can also be passed here to override the default configuration.

@@ -1,7 +1,7 @@
-var L = Object.defineProperty;
-var A = (d, r, t) => r in d ? L(d, r, { enumerable: !0, configurable: !0, writable: !0, value: t }) : d[r] = t;
-var s = (d, r, t) => (A(d, typeof r != "symbol" ? r + "" : r, t), t);
-class M {
+var M = Object.defineProperty;
+var x = (d, r, t) => r in d ? M(d, r, { enumerable: !0, configurable: !0, writable: !0, value: t }) : d[r] = t;
+var s = (d, r, t) => (x(d, typeof r != "symbol" ? r + "" : r, t), t);
+class S {
   constructor(r, t) {
     s(this, "accountId", null);
     s(this, "options", null);
@@ -23,27 +23,27 @@ class M {
     this.accountId = r, this.options = t;
   }
   buildUrl(r) {
-    var b, g, o, w, I, n, U, P, v, k, C, E, G;
+    var b, g, w, I, P, v, U, o, k, C, E, G, L, A;
     const t = ((b = this.options) == null ? void 0 : b.accountId) || this.accountId;
     if (!t)
       throw new Error("Grabby: accountId is required. Call init(accountId) or pass it in options.");
     const e = `${((g = this.options) == null ? void 0 : g.url) || "https://app.begrabby.com"}/booking/${t}`, a = new URL(e);
-    (r != null && r.compact || (o = this.options) != null && o.compact) && a.searchParams.append("compact", "true");
-    const c = (r == null ? void 0 : r.lang) || ((w = this.options) == null ? void 0 : w.lang);
+    (r != null && r.compact || (w = this.options) != null && w.compact) && a.searchParams.append("compact", "true"), (r != null && r.hideFooter || (I = this.options) != null && I.hideFooter) && a.searchParams.append("hideFooter", "true");
+    const c = (r == null ? void 0 : r.lang) || ((P = this.options) == null ? void 0 : P.lang);
     c && a.searchParams.append("lang", c);
-    const l = (r == null ? void 0 : r.returnUrl) || ((I = this.options) == null ? void 0 : I.returnUrl);
-    l && a.searchParams.append("returnUrl", l), ((r == null ? void 0 : r.isIframe) !== void 0 || ((n = this.options) == null ? void 0 : n.isIframe) !== void 0) && a.searchParams.append("isIframe", String((r == null ? void 0 : r.isIframe) || ((U = this.options) == null ? void 0 : U.isIframe))), r != null && r.productId && a.searchParams.append("productId", r.productId), r != null && r.eventId && a.searchParams.append("eventId", r.eventId), r != null && r.isGiftCardOpen && a.searchParams.append("isGiftCardOpen", "true"), r != null && r.preselectGiftCardAmount && a.searchParams.append("preselectGiftCardAmount", String(r.preselectGiftCardAmount));
-    const i = (r == null ? void 0 : r.colorPrimary) || ((P = this.options) == null ? void 0 : P.colorPrimary);
+    const l = (r == null ? void 0 : r.returnUrl) || ((v = this.options) == null ? void 0 : v.returnUrl);
+    l && a.searchParams.append("returnUrl", l), ((r == null ? void 0 : r.isIframe) !== void 0 || ((U = this.options) == null ? void 0 : U.isIframe) !== void 0) && a.searchParams.append("isIframe", String((r == null ? void 0 : r.isIframe) || ((o = this.options) == null ? void 0 : o.isIframe))), r != null && r.productId && a.searchParams.append("productId", r.productId), r != null && r.visitDate && a.searchParams.append("visitDate", r.visitDate), r != null && r.eventId && a.searchParams.append("eventId", r.eventId), r != null && r.isGiftCardOpen && a.searchParams.append("isGiftCardOpen", "true"), r != null && r.preselectGiftCardAmount && a.searchParams.append("preselectGiftCardAmount", String(r.preselectGiftCardAmount));
+    const i = (r == null ? void 0 : r.colorPrimary) || ((k = this.options) == null ? void 0 : k.colorPrimary);
     i && a.searchParams.append("colorPrimary", i);
-    const h = (r == null ? void 0 : r.colorAccent) || ((v = this.options) == null ? void 0 : v.colorAccent);
+    const h = (r == null ? void 0 : r.colorAccent) || ((C = this.options) == null ? void 0 : C.colorAccent);
     h && a.searchParams.append("colorAccent", h);
-    const m = (r == null ? void 0 : r.color) || ((k = this.options) == null ? void 0 : k.color);
+    const m = (r == null ? void 0 : r.color) || ((E = this.options) == null ? void 0 : E.color);
     m && a.searchParams.append("color", m);
-    const u = (r == null ? void 0 : r.background) || ((C = this.options) == null ? void 0 : C.background);
+    const u = (r == null ? void 0 : r.background) || ((G = this.options) == null ? void 0 : G.background);
     u && a.searchParams.append("background", u);
-    const f = (r == null ? void 0 : r.bannerUrl) || ((E = this.options) == null ? void 0 : E.bannerUrl);
+    const f = (r == null ? void 0 : r.bannerUrl) || ((L = this.options) == null ? void 0 : L.bannerUrl);
     f && a.searchParams.append("bannerUrl", f);
-    const y = (r == null ? void 0 : r.logoUrl) || ((G = this.options) == null ? void 0 : G.logoUrl);
+    const y = (r == null ? void 0 : r.logoUrl) || ((A = this.options) == null ? void 0 : A.logoUrl);
     return y && a.searchParams.append("logoUrl", y), a.toString();
   }
   render(r, t) {
@@ -78,7 +78,7 @@ class M {
     r == null || r.remove(), window.removeEventListener("message", this.handleMessage);
   }
 }
-typeof window < "u" && (window.Grabby = M);
+typeof window < "u" && (window.Grabby = S);
 export {
-  M as default
+  S as default
 };

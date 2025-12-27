@@ -7,6 +7,7 @@ export interface GrabbyOptions {
   lang?: string;
   returnUrl?: string;
   isIframe?: boolean;
+  hideFooter?: boolean;
 
   // Advanced Configurations
   // Advanced Configurations
@@ -24,5 +25,6 @@ export interface GrabbyOptions {
 export interface GrabbyOpenOptions {
   productId?: string;
   eventId?: string;
+  visitDate?: string;
   preselectGiftCardAmount?: number;
 }

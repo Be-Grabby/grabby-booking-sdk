@@ -1,6 +1,6 @@
 {
   "name": "@begrabby/booking-sdk",
-  "version": "1.0.",
+  "version": "1.1.1",
   "description": "Grabby Booking SDK",
   "main": "dist/grabby-sdk.umd.js",
   "module": "dist/grabby-sdk.es.js",
