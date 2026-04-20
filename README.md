@@ -213,6 +213,10 @@ The SDK automatically listens for messages from the booking interface:
 
 These events are handled automatically by the SDK.
 
+## GTM Events
+
+You can subscribe to GTM events, documented here: https://github.com/Be-Grabby/grabby-booking-sdk/blob/main/DATALAYER_EVENTS.md
+
 ## Browser Support
 
 - Modern browsers (Chrome, Firefox, Safari, Edge)
